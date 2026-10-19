@@ -1,11 +1,11 @@
 #!name=小红书Plus
-#!desc=如果还有广告直连，必须重装清除cache\n一定参照默认格式\n 1.增加4个regex筛选和1个信息等级筛选\n 2.添加推荐页热点删除\n 3.添加推荐页live删除\n 4.新增对detailfeed/preload的判断，如果你点不开某个卡片，就说明被屏蔽了\n 5.新增无痕模式开关（不产生浏览/播放记录，借鉴PiliNara）
+#!desc=如果还有广告直连，必须重装清除cache\n一定参照默认格式\n 1.增加4个regex筛选和1个信息等级筛选\n 2.添加推荐页热点删除\n 3.添加推荐页live删除\n 4.新增对detailfeed/preload的判断，如果你点不开某个卡片，就说明被屏蔽了\n 5.新增无痕模式开关（不产生浏览/播放记录，借鉴PiliNara）\n 6.解除“作者禁止下载”（改写function_switch.image_download）\n 7.解除“作者禁止复制”（补回note_text_press_options.copy）
 #!author=奶思[https://github.com/fmz200], Leo
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/RedPaper.png
 #!homepage=https://github.com/Sheldontao/Scripts
 #!raw-url=https://raw.githubusercontent.com/Sheldontao/Scripts/refs/heads/main/xhs/xiaohongshu.plugin
 #!loon_version = 3.5.1(978)
-#!date = 2026-10-02 22:20:00
+#!date = 2026-10-19 20:53:22
 
 
 [Argument]

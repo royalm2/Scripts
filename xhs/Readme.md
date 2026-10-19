@@ -7,3 +7,5 @@ Adguard: 在filter里选择订阅，将txt文件的raw url复制。
 小红书App，主要功能是屏蔽广告，
 添加了（正则）主页推荐流关键字屏蔽功能，搜索栏结果关键字屏蔽
 添加最低点赞数、评论数、收藏数、好数、转发数。
+解除详情页“作者禁止下载”：同时改写 function_switch.image_download 与 media_save_config。
+解除“作者禁止复制”：note_text_press_options 为空或缺少 copy 时补回。

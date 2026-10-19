@@ -475,6 +475,31 @@ if (
             item.share_info.function_entries.unshift(addItem);
           }
         }
+        // 解除"作者禁止下载"：App 的保存按钮读取 function_switch，
+        // 仅改 media_save_config 不够，enable=false 时仍会置灰并提示。
+        if (item?.function_switch?.length > 0) {
+          for (let switchItem of item.function_switch) {
+            if (
+              switchItem.type === "image_download" ||
+              switchItem.type === "video_download"
+            ) {
+              switchItem.enable = true;
+              if (switchItem.reason) delete switchItem.reason;
+            }
+          }
+        }
+        // 解除"作者禁止复制"：note_text_press_options 为空/缺少 copy 时补回。
+        // 开启复制的笔记返回 [{"key":"copy","extra":""}]，禁用的返回 []。
+        for (const n of [item, item?.note]) {
+          if (!n || typeof n !== "object") continue;
+          const pressOptions = Array.isArray(n.note_text_press_options)
+            ? n.note_text_press_options
+            : [];
+          if (!pressOptions.some((option) => option?.key === "copy")) {
+            pressOptions.push({ key: "copy", extra: "" });
+          }
+          n.note_text_press_options = pressOptions;
+        }
         if (item.hash_tag) {
           item.hash_tag = item.hash_tag.filter(
             (tag) => tag.type !== "interact_vote",
